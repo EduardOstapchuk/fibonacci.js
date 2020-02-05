@@ -27,8 +27,7 @@ function callbackFunc(x,number) {
 // -------Управляющая функция-----////
 
 function getFibElement(x, resCall) {
-    let result = x > 20?getFibElementRec(x):getFibElementFor(x);
-    //Пк чего то не тянет 100(
+    let result = x > 100?getFibElementRec(x):getFibElementFor(x);
         resCall(x, result);
         console.log(getFibElement(x, resCall))
 }
