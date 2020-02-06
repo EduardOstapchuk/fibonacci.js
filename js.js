@@ -1,7 +1,11 @@
 // -------Рекурсия------////
-const getFibElementRec = (index, prev = 0, last = 1) => {
-    if (!index) return 0;
-    return index - 2 > 1 ? getFibElementRec(index - 1, last, last + prev) : prev + last;
+// const getFibElementRec = (index, prev = 0, last = 1) => {
+//     if (!index) return 0;
+//     return index - 2 > 1 ? getFibElementRec(index - 1, last, last + prev) : prev + last;
+// }
+
+function getFibElementRec(index) {
+    return index <= 1 ? index : getFibElementRec(index - 1) + getFibElementRec(index - 2);
 }
 
 // -------Цикл-------------//
@@ -26,7 +30,7 @@ function callbackFunc(index,number) {
 // -------Управляющая функция-----////
 
 function getFibElement(index, resCall) {
-    let result = index > 100?getFibElementRec(index):getFibElementFor(index);
+    let result = index < 100?getFibElementRec(index):getFibElementFor(index);
         resCall(index, result);
 }
 
